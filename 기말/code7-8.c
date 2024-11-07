@@ -2,9 +2,16 @@
 
 int main()
 {
-	char s1[] = { 'K', 'o', 'r', 'e', 'a', "\0"};
-	char s2[] = { "Korea" };
-	char s3[] = "Korea";
+	int arr[2][3] =
+	{
+		{11, 12, 13},
+		{21, 22, 23}
+	};
 
-	printf("%s %s %s", s1, s2, s3);
+	for (int i = 0; i < 2; i++)
+	{
+		for (int j = 0; j < 3; j++)
+			printf("%d ", arr[i][j]);
+		printf("\n");
+	}
 }

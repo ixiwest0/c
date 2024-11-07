@@ -3,21 +3,16 @@
 
 int main()
 {
-	int prime[] = {2, 3, 5, 7, 11, 13, 17,19};
-	int n;
+	int r, c;
 
-	do {
-		printf("20ì´í•˜ ì •ìˆ˜ë¥¼ ìž…ë ¥í•˜ì„¸ìš”.\n");
-		scanf("%d", &n);
-	} while (n > 20);
+	printf("±¸±¸´ÜÀÇ ´Ü°ú Ç×À» °ø¹éÀ¸·Î ±¸ºÐÇÏ¿©ÀÔ·ÂÇÏ¼¼¿ä.\r\n");
+	scanf("%d%d", &r, &c);
 
-	for (int i = 0; i < 8; i++)
-	{
-		if (n == prime[i])
-		{
-			printf("ì†Œìˆ˜ìž…ë‹ˆë‹¤.");
-			return 0;
-		}
-		printf("ì†Œìˆ˜ê°€ ì•„ë‹™ë‹ˆë‹¤.");
-	}
+	int table[8][9] = { { 0 } };
+
+	for (int i = 2; i < 10; i++)
+		for (int j = 1; j < 10; j++)
+			table[i - 2][j - 1] = i * j;
+
+	printf("%d * %d = %d", r, c, table[r - 2][c - 1]);
 }
