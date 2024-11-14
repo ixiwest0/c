@@ -1,23 +1,19 @@
-#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-#define STUDENTS 5
+
+void Reverse(int arr[10])
+{
+	for (int i = 0; i < 5; i++)
+	{
+		int temp = arr[i];
+		arr[i] = arr[9 - i];
+		arr[9 - i] = temp;
+	}
+}
 
 int main()
 {
-	int scores[STUDENTS];
-	int sum = 0;
-	int i;
-	double avg;
-
-	for (i = 0; i < STUDENTS; i += 1)
-	{
-		printf("학생들의 성적을 입력하시오: ");
-		scanf("%d", &scores[i]);
-
-		sum += scores[i];
-	}
-
-	avg = sum / STUDENTS;
-
-	printf("성적 평균 = %.2lf", avg);
+	int arr[] = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+	Reverse(arr);
+	for (int i = 0; i < 10; i++)
+		printf("%d, ", arr[i]);
 }
